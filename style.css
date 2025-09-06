@@ -264,15 +264,147 @@ p {
 
 .hero-image {
     position: relative;
+    perspective: 1000px;
 }
 
+.image-card {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 15px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 10px 20px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.image-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--gold), var(--gold-light), var(--gold), var(--gold-light));
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: borderGlow 4s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        background: linear-gradient(45deg, var(--gold), var(--gold-light), var(--gold), var(--gold-light));
+    }
+    25% {
+        background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-light), var(--gold));
+    }
+    50% {
+        background: linear-gradient(225deg, var(--gold), var(--gold-light), var(--gold), var(--gold-light));
+    }
+    75% {
+        background: linear-gradient(315deg, var(--gold-light), var(--gold), var(--gold-light), var(--gold));
+    }
+}
+
+
+
+[data-theme="dark"] .image-card {
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+
+
 .hero-image img {
-    width: 300px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 3px solid var(--gold);
-    box-shadow: 0 20px 40px var(--shadow-color);
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.image-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(212, 175, 55, 0.1) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(212, 175, 55, 0.1) 100%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+
+
+.card-decoration {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    background: radial-gradient(circle at center, var(--gold) 2px, transparent 2px);
+    opacity: 0.6;
+    animation: decorationPulse 3s ease-in-out infinite;
+}
+
+@keyframes decorationPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.card-decoration::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: decorationRipple 3s ease-in-out infinite;
+}
+
+@keyframes decorationRipple {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
 }
 
 .hero-text {
@@ -969,9 +1101,9 @@ p {
         font-size: 2rem;
     }
     
-    .hero-image img {
-        width: 250px;
-        height: 320px;
+    .image-card {
+        width: 280px;
+        height: 360px;
     }
     
     .gallery-grid {
@@ -1050,9 +1182,17 @@ p {
         gap: 1.5rem;
     }
     
-    .hero-image img {
-        width: 200px;
-        height: 280px;
+    .image-card {
+        width: 240px;
+        height: 320px;
+        padding: 12px;
+    }
+    
+    .card-decoration {
+        width: 50px;
+        height: 50px;
+        top: 15px;
+        right: 15px;
     }
     
     h1 {
