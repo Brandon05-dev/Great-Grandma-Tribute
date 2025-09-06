@@ -1,6 +1,70 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Slideshow functionality
+    let currentSlideIndex = 1;
+    const slides = [
+        { src: 'hero image.jpeg', alt: 'Great-Grandma Memory 1' },
+        { src: 'Image 1.jpeg', alt: 'Great-Grandma Mama Fejenia Taka' },
+        { src: 'hero image.jpeg', alt: 'Great-Grandma Memory 2' }
+    ];
+    
+    function updateSlideshow() {
+        const slideCards = document.querySelectorAll('.slide-card');
+        const indicators = document.querySelectorAll('.indicator');
+        
+        slideCards.forEach((card, index) => {
+            const img = card.querySelector('.slide-image');
+            const slideData = slides[(currentSlideIndex + index - 1 + slides.length) % slides.length];
+            
+            img.src = slideData.src;
+            img.alt = slideData.alt;
+            
+            // Remove all classes
+            card.classList.remove('main-card', 'side-card', 'left-card', 'right-card');
+            
+            // Add appropriate classes
+            if (index === 1) {
+                card.classList.add('main-card');
+            } else {
+                card.classList.add('side-card');
+                if (index === 0) {
+                    card.classList.add('left-card');
+                } else {
+                    card.classList.add('right-card');
+                }
+            }
+        });
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlideIndex);
+        });
+    }
+    
+    window.nextSlide = function() {
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        updateSlideshow();
+    };
+    
+    window.previousSlide = function() {
+        currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+        updateSlideshow();
+    };
+    
+    window.currentSlide = function(n) {
+        currentSlideIndex = n - 1;
+        updateSlideshow();
+    };
+    
+    // Auto-advance slideshow every 5 seconds
+    setInterval(() => {
+        nextSlide();
+    }, 5000);
+    
+    // Initialize slideshow
+    updateSlideshow();
+    
     // Theme Management
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');

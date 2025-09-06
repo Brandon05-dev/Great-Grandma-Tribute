@@ -262,9 +262,51 @@ p {
     text-align: center;
 }
 
-.hero-image {
+.hero-slideshow {
     position: relative;
     perspective: 1000px;
+}
+
+.slideshow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.slide-card {
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.main-card {
+    z-index: 3;
+    transform: scale(1);
+}
+
+.side-card {
+    z-index: 1;
+    transform: scale(0.8);
+    filter: blur(2px) brightness(0.7);
+    opacity: 0.6;
+}
+
+.side-card .image-card {
+    width: 240px;
+    height: 320px;
+    padding: 12px;
+}
+
+.left-card {
+    transform: scale(0.8) rotateY(15deg);
+}
+
+.right-card {
+    transform: scale(0.8) rotateY(-15deg);
 }
 
 .image-card {
@@ -299,6 +341,10 @@ p {
     animation: borderGlow 4s ease-in-out infinite;
 }
 
+.main-card .image-card::before {
+    opacity: 0.3;
+}
+
 @keyframes borderGlow {
     0%, 100% {
         background: linear-gradient(45deg, var(--gold), var(--gold-light), var(--gold), var(--gold-light));
@@ -327,7 +373,7 @@ p {
 
 
 
-.hero-image img {
+.slide-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -353,7 +399,7 @@ p {
         rgba(212, 175, 55, 0.1) 100%
     );
     pointer-events: none;
-    opacity: 0;
+    opacity: 0.5;
     transition: opacity 0.4s ease;
 }
 
@@ -1099,6 +1145,15 @@ p {
     
     h2 {
         font-size: 2rem;
+    }
+    
+    .slideshow-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .side-card {
+        display: none;
     }
     
     .image-card {
