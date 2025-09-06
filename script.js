@@ -128,9 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Gallery lightbox functionality
-    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const galleryImages = document.querySelectorAll('.gallery-item img');
     
-    galleryItems.forEach(item => {
+    galleryImages.forEach(item => {
         item.addEventListener('click', function() {
             createLightbox(this.src, this.alt);
         });
@@ -374,9 +374,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Gallery items hover effect
-    const galleryImages = document.querySelectorAll('.gallery-item');
+    const galleryItemsHover = document.querySelectorAll('.gallery-item');
     
-    galleryImages.forEach(item => {
+    galleryItemsHover.forEach(item => {
         item.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-10px) scale(1.05)';
             this.style.boxShadow = '0 20px 40px rgba(212, 175, 55, 0.3)';
@@ -613,46 +613,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Simulate file upload dialog
             alert('This would open a file upload dialog or redirect to a submission form. For now, please email your photos to: family.memories@email.com');
         });
-    }
-    
-    // Theme Management for all pages
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    
-    // Load saved theme or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-    
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-            
-            // Add rotation animation
-            this.classList.add('rotating');
-            setTimeout(() => {
-                this.classList.remove('rotating');
-            }, 300);
-        });
-    }
-    
-    function updateThemeIcon(theme) {
-        if (themeIcon) {
-            if (theme === 'light') {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
-                if (themeToggle) themeToggle.title = 'Switch to dark mode';
-            } else {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-                if (themeToggle) themeToggle.title = 'Switch to light mode';
-            }
-        }
     }
 });
 
