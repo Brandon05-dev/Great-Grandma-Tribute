@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Slideshow functionality
     let currentSlideIndex = 1;
     const slides = [
-        { src: 'hero image.jpeg', alt: 'Great-Grandma Memory 1' },
-        { src: 'Image 1.jpeg', alt: 'Great-Grandma Mama Fejenia Taka' },
-        { src: 'hero image.jpeg', alt: 'Great-Grandma Memory 2' }
+        { src: 'image-1.jpg', alt: 'Great-Grandma Memory 1' },
+        { src: 'image-2.jpg', alt: 'Great-Grandma Mama Fejenia Taka' },
+        { src: 'image-3.jpg', alt: 'Great-Grandma Memory 2' }
     ];
     
     function updateSlideshow() {
