@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - In Memory of Great-Grandma</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="memorial-text">In Loving Memory</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="legacy.html" class="nav-link">Legacy</a></li>
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="tributes.html" class="nav-link">Tributes</a></li>
+                <li><a href="index.html#location" class="nav-link">Location</a></li>
+                <li><a href="index.html#support" class="nav-link">Support</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+                    <i class="fas fa-moon icon" id="theme-icon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title fade-in">Cherished Memories</h1>
+                <p class="page-subtitle fade-in-delay">A lifetime of beautiful moments captured in time</p>
+                <div class="title-underline"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Categories -->
+    <section class="gallery-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All Photos</button>
+                <button class="category-tab" data-category="family">Family</button>
+                <button class="category-tab" data-category="celebrations">Celebrations</button>
+                <button class="category-tab" data-category="community">Community</button>
+                <button class="category-tab" data-category="videos">Videos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Family Photos -->
+                <div class="gallery-item" data-category="family">
+                    <img src="https://via.placeholder.com/400x400/333/fff?text=Family+Portrait+1930s" alt="Family Portrait 1930s">
+                    <div class="gallery-overlay">
+                        <h4>Family Portrait</h4>
+                        <p>1930s - Early family photo</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="family">
+                    <img src="https://via.placeholder.com/400x300/333/fff?text=Wedding+Day" alt="Wedding Day">
+                    <div class="gallery-overlay">
+                        <h4>Wedding Day</h4>
+                        <p>A beautiful beginning</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="family">
+                    <img src="https://via.placeholder.com/400x500/333/fff?text=With+Children" alt="With Children">
+                    <div class="gallery-overlay">
+                        <h4>With Her Children</h4>
+                        <p>The joy of motherhood</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="family">
+                    <img src="https://via.placeholder.com/400x400/333/fff?text=Grandchildren" alt="Grandchildren">
+                    <div class="gallery-overlay">
+                        <h4>With Grandchildren</h4>
+                        <p>Generations of love</p>
+                    </div>
+                </div>
+                
+                <!-- Celebration Photos -->
+                <div class="gallery-item" data-category="celebrations">
+                    <img src="https://via.placeholder.com/400x300/333/fff?text=Birthday+Celebration" alt="Birthday Celebration">
+                    <div class="gallery-overlay">
+                        <h4>90th Birthday</h4>
+                        <p>A milestone celebration</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="celebrations">
+                    <img src="https://via.placeholder.com/400x400/333/fff?text=Christmas+Morning" alt="Christmas Morning">
+                    <div class="gallery-overlay">
+                        <h4>Christmas Morning</h4>
+                        <p>Holiday traditions</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="celebrations">
+                    <img src="https://via.placeholder.com/400x300/333/fff?text=Anniversary" alt="Anniversary">
+                    <div class="gallery-overlay">
+                        <h4>Golden Anniversary</h4>
+                        <p>50 years of love</p>
+                    </div>
+                </div>
+                
+                <!-- Community Photos -->
+                <div class="gallery-item" data-category="community">
+                    <img src="https://via.placeholder.com/400x300/333/fff?text=Church+Service" alt="Church Service">
+                    <div class="gallery-overlay">
+                        <h4>Church Ministry</h4>
+                        <p>A life of service</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="community">
+                    <img src="https://via.placeholder.com/400x400/333/fff?text=Community+Event" alt="Community Event">
+                    <div class="gallery-overlay">
+                        <h4>Community Gathering</h4>
+                        <p>Bringing people together</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="community">
+                    <img src="https://via.placeholder.com/400x300/333/fff?text=Volunteer+Work" alt="Volunteer Work">
+                    <div class="gallery-overlay">
+                        <h4>Volunteer Service</h4>
+                        <p>Helping those in need</p>
+                    </div>
+                </div>
+                
+                <!-- Recent Photos -->
+                <div class="gallery-item" data-category="family">
+                    <img src="https://via.placeholder.com/400x500/333/fff?text=Recent+Family+Photo" alt="Recent Family Photo">
+                    <div class="gallery-overlay">
+                        <h4>Recent Family Gathering</h4>
+                        <p>2024 - Four generations together</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="family">
+                    <img src="https://via.placeholder.com/400x300/333/fff?text=Garden+Time" alt="Garden Time">
+                    <div class="gallery-overlay">
+                        <h4>In Her Garden</h4>
+                        <p>Her peaceful sanctuary</p>
+                    </div>
+                </div>
+                
+                <!-- Video Items -->
+                <div class="gallery-item video-item" data-category="videos">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play"></i>
+                        <h4>Birthday Message</h4>
+                        <p>90th Birthday Video</p>
+                        <!-- Replace with actual YouTube embed -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen style="display: none;"></iframe>
+                    </div>
+                </div>
+                
+                <div class="gallery-item video-item" data-category="videos">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play"></i>
+                        <h4>Family Stories</h4>
+                        <p>Sharing memories</p>
+                        <!-- Replace with actual YouTube embed -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen style="display: none;"></iframe>
+                    </div>
+                </div>
+                
+                <div class="gallery-item video-item" data-category="videos">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play"></i>
+                        <h4>Life Tribute</h4>
+                        <p>A celebration of her life</p>
+                        <!-- Replace with actual YouTube embed -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen style="display: none;"></iframe>
+                    </div>
+                </div>
+                
+                <!-- More Family Photos -->
+                <div class="gallery-item" data-category="family">
+                    <img src="https://via.placeholder.com/400x400/333/fff?text=Cooking+Together" alt="Cooking Together">
+                    <div class="gallery-overlay">
+                        <h4>Teaching to Cook</h4>
+                        <p>Passing down traditions</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="celebrations">
+                    <img src="https://via.placeholder.com/400x300/333/fff?text=Easter+Sunday" alt="Easter Sunday">
+                    <div class="gallery-overlay">
+                        <h4>Easter Sunday</h4>
+                        <p>Family traditions</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="family">
+                    <img src="https://via.placeholder.com/400x500/333/fff?text=Reading+Stories" alt="Reading Stories">
+                    <div class="gallery-overlay">
+                        <h4>Story Time</h4>
+                        <p>Reading to great-grandchildren</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Submission -->
+    <section class="memory-submission">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Share Your Memories</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="submission-content">
+                <p>Do you have photos or videos that capture special moments with our beloved great-grandmother? We'd love to include them in this memorial gallery.</p>
+                <button class="submit-memory-btn">
+                    <i class="fas fa-upload"></i>
+                    Submit a Memory
+                </button>
+                <p class="submission-note">Send photos and videos to: <strong>family.memories@email.com</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 In Memory of Great-Grandma. Created with love by the family.</p>
+                    <p class="closing-line">"Those we love never truly leave us."</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
