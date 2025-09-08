@@ -682,14 +682,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Submit Memory Button
-    const submitMemoryBtn = document.querySelector('.submit-memory-btn');
-    if (submitMemoryBtn) {
-        submitMemoryBtn.addEventListener('click', function() {
-            // Simulate file upload dialog
-            alert('This would open a file upload dialog or redirect to a submission form. For now, please email your photos to: family.memories@email.com');
-        });
-    }
+    // Submit Memory Button - Now handled by WhatsApp link in HTML
+    // No JavaScript intervention needed since it's a direct WhatsApp link
 });
 
 // Utility functions
