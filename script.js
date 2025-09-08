@@ -605,6 +605,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryTabs = document.querySelectorAll('.category-tab');
     const galleryItems = document.querySelectorAll('.gallery-item');
     
+    // Initialize gallery - show all items by default
+    function initializeGallery() {
+        galleryItems.forEach(item => {
+            item.style.display = 'block';
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+        });
+    }
+    
+    // Call initialization
+    initializeGallery();
+    
     categoryTabs.forEach(tab => {
         tab.addEventListener('click', function() {
             const category = this.getAttribute('data-category');
