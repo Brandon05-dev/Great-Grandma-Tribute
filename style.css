@@ -482,7 +482,7 @@ p {
 
 .hero-dates {
     font-size: 1.5rem;
-    color: var(--text-secondary);
+    color: #ffffff !important;
     margin-bottom: 2rem;
     font-weight: 300;
 }
@@ -593,28 +593,56 @@ p {
     gap: 2rem;
 }
 
+
 .gallery-item {
     position: relative;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     aspect-ratio: 1;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15), 0 1.5px 8px 0 var(--gold-light);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s, border 0.3s;
+    z-index: 1;
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold-dark));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.7;
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.22), 0 2px 16px 0 var(--gold);
+    border-color: var(--gold);
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(212,175,55,0.10);
+    transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+    z-index: 3;
+    position: relative;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08) rotate(-1deg);
+    box-shadow: 0 8px 32px 0 var(--gold-light), 0 1.5px 8px 0 var(--gold);
 }
 
 .video-item {
@@ -1531,20 +1559,27 @@ p {
 }
 
 /* Enhanced Gallery Items */
+
 .gallery-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    color: white;
+    background: rgba(34, 34, 34, 0.45);
+    backdrop-filter: blur(8px) saturate(120%);
+    color: #fff;
     padding: 2rem 1rem 1rem;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
     transform: translateY(100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(.4,2,.6,1), background 0.3s;
+    z-index: 4;
 }
 
 .gallery-item:hover .gallery-overlay {
     transform: translateY(0);
+    background: rgba(34, 34, 34, 0.75);
 }
 
 .gallery-overlay h4 {
