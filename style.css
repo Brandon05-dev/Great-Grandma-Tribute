@@ -695,7 +695,7 @@ p {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 40px var(--gold-light);
     border-color: var(--gold);
-    background: linear-gradient(135deg, var(--card-bg), #fffbe6 80%);
+    /* Removed gradient background for hover */
 }
 
 .quote-icon {
