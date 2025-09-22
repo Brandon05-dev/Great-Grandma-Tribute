@@ -159,10 +159,13 @@
                         <strong>Salama, rohoni, ni salama rohoni mwangu!</strong></p>
                     </div>
                     <div class="audio-player">
-                        <a class="play-btn" href="https://play.mdundo.com/artist/33534/WycliffeJackson?utm_source=mdundo&utm_medium=geo&utm_campaign=geo_redirect#autoplay-1259765" target="_blank" rel="noopener noreferrer">
-                            <button><i class="fas fa-play"></i></button>
-                            <span>Play Hymn</span>
-                        </a>
+                        <audio id="ni-salama-audio" src="https://mdundo.com/media/song/1259765/WycliffeJackson_-_Ni_Salama_Rohoni_Mwangu.mp3" preload="none"></audio>
+                        <button class="play-btn" onclick="document.getElementById('ni-salama-audio').play()">
+                            <div class="play-btn-content">
+                                <i class="fas fa-play"></i>
+                                <span>Play Hymn</span>
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
